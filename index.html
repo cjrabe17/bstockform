@@ -5,6 +5,8 @@
       <title>Form Test</title>
       <meta name="description" content="">
       <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- Added link to the jQuery library -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
   </head>
   <body>
@@ -21,7 +23,7 @@
                     <label for="otherInput">Other Input</label>
                     <input type="text" class="form-control" id="otherInput" placeholder="More text!">
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary submit">Submit</button>
               </form>    
         </div>
       </div>
@@ -29,6 +31,18 @@
 
 
     <!-- JavaScript starts here -->
+    <script type="text/javascript">
+
+      $(document).ready(function() {
+        
+        $(".submit").on("click", function() {
+          event.preventDefault();
+          console.log("Name is: " + $("#nameInput").val());
+          console.log("Other info is: " + $("#otherInput").val());
+        });
+
+      });
+    </script>
 
   </body>
 </html>
